@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,8 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'restaurant',  # Add this line
+    'LittleLemonAPI',  # Add this line
     'rest_framework',  # Add this line
+    'rest_framework.authtoken',  # Add this line
+    'restaurant',  # Added this line
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'littlelemon.urls'
+
+APPEND_SLASH = True  # Add this line
 
 TEMPLATES = [
     {
@@ -79,11 +82,11 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'littlelemon',  # your MySQL database name
-        'USER': 'littlelemonuser',  # your MySQL username
-        'PASSWORD': 'StrongPassword123',  # your MySQL password
-        'HOST': '127.0.0.1',  # or 'localhost'
-        'PORT': '3306',  # default MySQL port
+        'NAME': 'littlelemonuser',  # Your MySQL database name
+        'USER': 'littlelemonuser',  # MySQL username
+        'PASSWORD': 'StrongPassword123',  # MySQL password
+        'HOST': 'localhost',  # MySQL host
+        'PORT': '3306',  # Default MySQL port
     }
 }
 
